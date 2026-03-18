@@ -1,0 +1,79 @@
+BUI KHANH DUY
+AI Engineer/Research Intern
++84 862 607 525
+mail: duy.bk1608@gmail. com
+BACKGROUND
+I’m a final-year student at Faculty of Mathematics and Informatics, Hanoi University of Science and Technol-
+ogy. I have a decent foundation in mathematics and programming acquired during my undergraduate studies.
+I have a strong passion for research areas such as Machine Learning, Deep Learning, and Optimization for Ma-
+chine Learning/Deep Learning. Therefore, I am eager to hone my research skills, particularly in analyzing aca-
+demic papers and experimenting with algorithms. My goal is to contribute to scientific projects and prepare
+for advanced graduate studies in the future.
+EDUCATION
+Hanoi University of Science and Technology Sep 2022 - Present
+Bachelor of Mathematics and Informatics Expected Graduation - Sep 2026
+• GPA: 3.52/4.0 (expected)
+• HUST Academic Achievement Scholarship: 2022.2; 2024.1
+• Award-winning student recognized for exceptional academic achievements
+• A+/A: Decision Support Systems, Optimization methods, Time Series Forecasting,...
+SKILL
+• Progamming: Python, C/C++, C#, SQL
+• ML/DL: PyTorch, TensorFlow, Scikit-learn, Keras, OpenCV, Hugging Face
+• Data Science & Analytics: Pandas, NumPy & SciPy, Matplotlib & Seaborn
+• English: Basic communication and reading document in English
+• Soft skill: Collaboration, continuous learning, team-work, critical-thinking, communication
+PROJECTS
+Novel Deep Learning Architecture for Semantic Segmentation in Precision Agriculture
+Dec 2025 – Present
+• Type: Research
+• Description: Developed AGW-SSDN, a semantic segmentation network optimized for crop vs. weed dis-
+crimination on multi-scale and highly imbalanced agricultural datasets.
+• Key Technical Contributions:
+– Adaptive Frequency Feature Extraction: Engineered an AGW-Stem using Learnable Gabor
+Convolutions to capture orientation- and texture-selective plant features.
+– Cascaded Spectral-Spatial Aggregator (CSSA): Designed a multi-branch module combining Effi-
+cient Attention with Adaptive Fourier Neural Operators (AFNO) for global-local context fusion.
+– Boundary-Aware Decoder: Implemented an Edge-Guided Aggregation (EGA) decoder with
+morphological boundary priors to sharpen crop-weed transition predictions.
+– Multi-Objective Loss: Formulated a hybrid loss combining Lovász-Softmax, Boundary Loss, and Mu-
+tual Information Minimization (MIM) to address class imbalance and feature disentanglement.
+• Tech Stack: Computer Vision, Semantic Segmentation, PyTorch, Python.
+OW-GSM: Orthogonal Wavelet-Structured Global State and Mamba for Multivariate TSF
+October 2025 – January 2026
+• Type: Research
+• Description: Developed a novel multivariate time series forecasting architecture (OW-GSM) built on a
+learnable orthogonal wavelet decomposition principle to explicitly separate long-term trends from short-
+term fluctuations.
+• Key Contributions:
+– Proposed OW-GSM Architecture: Integrated a stationarity-aware mechanism into the Mamba backbone
+to stabilize input distributions.
+– Performance Optimization: Leveraged a bi-directional Mamba encoder for local dynamics, achieving lin-
+ear complexity O(L) to process long sequences efficiently without the quadratic bottleneck of attention
+mechanisms.
+– Benchmarking: Validated superior accuracy, noise robustness, and memory scalability against estab-
+lished state-of-the-art baselines like PatchTST, iTransformer, and DLinear across multiple benchmark
+datasets.
+• Tech Stack: Python, PyTorch, Mamba (SSM), Wavelet Analysis, Time Series Forecasting.
+Face Recognition-based Attendance System
+• Objective: To develop a secure automated attendance solution utilizing Deep Learning for real-time iden-
+tification and anti-spoofing capability.
+• Methodology: Implemented CNN architectures (ResNet) and ArcFace to map faces into high-dimensional
+vector spaces and used angular margin for identity verification and integrated Liveness Detection to distin-
+guish between genuine faces and presentation attacks.
+• Technologies: Python, Scikit learn, NumPy, FastAPI, ReactJS, insight-face.
+Improving Recall for the Customer Churn Prediction Classification Problem
+• Objective: Improving Recall for the Customer Churn Prediction Classification Problem on the Telco Cus-
+tomer Churn dataset.
+• Methodology: Improve the Recall for the problem using Feature Engineering, Over/Under Sampling,
+Hyperparameter Tuning, Embedded Learing,..
+• Technologies: Python, Scikit learn, Pandas, NumPy, Matplotlib, Seaborn.
+Wine Price Prediction based on Ratings
+• Objective: To analyze the statistical correlation between wine quality ratings and market prices, and con-
+struct a regression model to estimate prices with high precision.
+• Methodology: Analyzed the statistical correlation between ratings and prices, then processed data to
+handle outliers and trained model to estimate wine prices based on rating scores.
+• Technologies: Python, Scikit learn, Pandas, NumPy, Matplotlib, Seaborn.
+EXTRACURRICULAR ACTIVITIES
+• Head of the Academic Committee, Applied Mathematics and Informatics Club (AMIC).
+• Participant, 2025 Student Mathematics Summer School (VIASM) on Data Science and Machine Learning.
+• Participant, 22nd Workshop on Optimization and Scientific Computing (Institute of Mathematics).
