@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Profile - Bui Khanh Duy">
+    <title>Bui Khanh Duy | Academic Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#about" class="nav-logo">Bui Khanh Duy</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#news" class="nav-link">News</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#ongoing" class="nav-link">Ongoing</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#awards" class="nav-link">Awards</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-image">
+                <img src="assets/images/avatar.jpg" alt="Profile Photo" onerror="this.src='https://via.placeholder.com/200x200?text=Photo'">
+            </div>
+            <h1 class="name"><span class="name-first">Bui Khanh</span> <span class="name-last">Duy</span></h1>
+            <p class="nickname">Khanh Duy</p>
+            <div class="title-badge">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>Undergraduate Student</span>
+            </div>
+            <p class="affiliation">[Your University/Company]</p>
+            
+            <div class="contact-info">
+                <a href="mailto:your-email@example.com" class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>your-email@example.com</span>
+                </a>
+                <a href="mailto:your-email2@example.com" class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+                    <span>your-email2@example.com</span>
+                </a>
+                <a href="https://github.com/YourGithub" target="_blank" class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub: YourGithub</span>
+                </a>
+                <a href="#" target="_blank" class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                    <span>Google Scholar</span>
+                </a>
+                <!-- <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span>LinkedIn</span>
+                </a> -->
+            </div>
+
+            <div class="cv-download">
+                <a href="assets/cv.pdf" class="btn-cv" target="_blank">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download CV</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About</h2>
+                <p>
+                    I am a software developer / student from [Your Country], majoring in <strong>[Your Major]</strong> 
+                    at [Your University / Company].
+                </p>
+                <p>
+                    I am currently exploring opportunities in [Your Field] and working on exciting personal projects.
+                </p>
+                <p>
+                    My main interests lie in <strong>[Interest 1]</strong>, <strong>[Interest 2]</strong>, and <strong>[Interest 3]</strong>.
+                </p>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="section">
+                <h2 class="section-title">News</h2>
+                <ul class="news-list">
+                    <!-- Add new news items at the top -->
+                    <li class="news-item">
+                        <span class="news-date">Mar 2026</span>
+                        <span class="news-content">🎉 Achieved a new milestone! [Add your news here]</span>
+                    </li>
+                    
+                                        <!--                     <li class="news-item">
+                        <span class="news-date">Jun 2025</span>
+                        <span class="news-content">Graduated with B.S. in Computer Science from [University].</span>
+                    </li> -->
+                    <!-- More news items... -->
+                </ul>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-timeline">
+                    
+                    
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">Publications</h2>
+                <p class="pub-note">
+                    <span class="equal-star">★</span> indicates equal contribution<br>
+                    <span class="pub-tags-legend">Tags:
+                    <span class="pub-tag tag-oral">Oral</span>
+                    <span class="pub-tag tag-spotlight">Spotlight</span>
+                    <span class="pub-tag tag-poster">Poster</span>
+                    <span class="pub-tag tag-workshop">Workshop</span>
+                    <span class="pub-tag tag-preprint">Preprint</span>
+                    <span class="pub-tag tag-history">History</span>
+                    <br></span>
+                    <div class="pub-note-info-list">
+                        <div class="pub-note-info-item">
+                            <svg class="pub-note-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <span>I share submission history to normalize rejection as part of the research journey.</span>
+                        </div>
+                        <div class="pub-note-info-item">
+                            <svg class="pub-note-info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <span>I choose workshops as venues to publish some primary ideas and &ldquo;preprints&rdquo; before extending them more comprehensively for the main conference track.</span>
+                        </div>
+                    </div>
+                </p>
+                
+                <div class="publications-list">
+                    <!-- Publication Item Template -->
+                    <div class="pub-item">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-content">
+                            <h3 class="pub-title">Predictive Spectral Calibration for Source-Free Test-Time Regression</h3>
+                            <div class="pub-authors">
+                                <strong>Nguyen Viet Tuan Kiet</strong>, Huynh Thanh Trung, Pham Huy Hieu
+                            </div>
+                            <div class="pub-venue">Workshop on Test-Time Scaling for Computer Vision (CVPR-26)</div>
+                            <div class="pub-keywords"><strong>Keywords:</strong> Test-Time Adaptation, Image Regression, Feature Alignment</div>
+                            <!-- <div class="pub-keywords"><strong>Note:</strong> I'm refactoring codebase, it will be updated soon.</div> -->
+                            <div class="pub-links">
+                                <span class="pub-tag tag-workshop">Workshop</span>
+                                <span class="pub-tag tag-history" title="Submission History">CVPRW-26 <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <a href="https://arxiv.org/abs/2603.09338" class="pub-link">Paper</a>
+                                <a href="#" class="pub-link">Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="pub-item">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-content">
+                            <h3 class="pub-title">MAPLE: Multi-Agent Prior Learning for Constructing Tree Ensembles</h3>
+                            <div class="pub-authors">
+                                <strong>Nguyen Viet Tuan Kiet</strong>, Nguyen Ba Thinh, Huynh Thanh Trung, Pham Huy Hieu
+                            </div>
+                            <div class="pub-venue">Workshop on Multi-Agent Learning and Its Opportunities in the Era of Generative AI (ICLR-26)</div>
+                            <div class="pub-keywords"><strong>Keywords:</strong> Tabular Learning, Large Language Models, Multi-Agent Learning</div>
+                            <div class="pub-links">
+                                <span class="pub-tag tag-workshop">Workshop</span>
+                                <span class="pub-tag tag-history" title="Submission History">ICLRW-26 <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <a href="https://openreview.net/forum?id=bBIA4TVEBG" class="pub-link">Paper</a>
+                                <a href="https://github.com/YourGithub/MAPLE" class="pub-link">Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-year">2025</div>
+                        <div class="pub-content">
+                            <h3 class="pub-title">MOTIF: Multi-strategy Optimization via Turn-based Interaction Framework</h3>
+                            <div class="pub-authors">
+                                <strong>Nguyen Viet Tuan Kiet</strong>, Dao Van Tung, Tran Cong Dao, Huynh Thi Thanh Binh
+                            </div>
+                            <div class="pub-venue">The 40th AAAI Conference on Artificial Intelligence (AAAI-26)</div>
+                            <div class="pub-keywords"><strong>Keywords:</strong> Combinatorial Optimization, Automatic Algorithm Design, Multi-Agent Prompting</div>
+                            <div class="pub-links">
+                                <span class="pub-tag tag-oral">Oral</span>
+                                <span class="pub-tag tag-history" title="Submission History">AAAI-26 <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <a href="https://arxiv.org/abs/2508.03929" class="pub-link">Paper</a>
+                                <a href="https://github.com/YourGithub/MOTIF" class="pub-link">Code</a>
+                                <a href="#" class="pub-link">Poster</a>
+                                <a href="#" class="pub-link">Slides</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more publications here -->
+                </div>
+            </section>
+
+            <!-- Ongoing Section -->
+            <section id="ongoing" class="section">
+                <h2 class="section-title">Ongoing</h2>
+                <!-- <p class="ongoing-note">
+                    <span class="ongoing-badge">● 5 Active</span>
+                </p> -->
+                
+                <div class="ongoing-list">
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">01</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Automatic Algorithm Design</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-conceptual">Conceptual</span>
+                                <span class="ongoing-kw kw-co">Combinatorial Optimization</span>
+                                <!-- <span class="ongoing-kw kw-ec">Evolutionary Computation</span> -->
+                                <span class="ongoing-kw kw-llm">Large Language Model</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Aug 2025</div>
+                    </div>
+
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">02</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Informed Machine Learning</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-theoretical">Theoretical</span>
+                                <span class="ongoing-kw kw-tl">Tabular Learning</span>
+                                <span class="ongoing-kw kw-llm">Large Language Model</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Sep 2025</div>
+                    </div>
+
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">03</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Structural Learning in Deep Models</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-empirical">Empirical</span>
+                                <span class="ongoing-kw kw-nco">Neural Combinatorial Optimization</span>
+                                <span class="ongoing-kw kw-mas">Multi-Agent System</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Oct 2025</div>
+                    </div>
+
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">04</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Advanced Residual Learning</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-conceptual">Conceptual</span>
+                                <span class="ongoing-kw kw-cv">Computer Vision</span>
+                                <span class="ongoing-kw kw-node">Neural Ordinary Differential Equations</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Dec 2025</div>
+                    </div>
+
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">05</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Multi-Robot Exploration</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-empirical">Empirical</span>
+                                <span class="ongoing-kw kw-robot">Robotics</span>
+                                <span class="ongoing-kw kw-mas">Multi-Agent System</span>
+                                <span class="ongoing-kw kw-hs">Heuristic Search</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Dec 2025</div>
+                    </div>
+
+                    <div class="ongoing-item">
+                        <div class="ongoing-number">06</div>
+                        <div class="ongoing-content">
+                            <h3 class="ongoing-title">Low-level Vision Tasks</h3>
+                            <div class="ongoing-keywords">
+                                <span class="ongoing-tag tag-theoretical">Theoretical</span>
+                                <span class="ongoing-kw kw-cv">Computer Vision</span>
+                                <span class="ongoing-kw kw-ir">Image Restoration</span>
+                            </div>
+                        </div>
+                        <div class="ongoing-date">Jan 2026</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-period">2025 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Research Assistant</h3>
+                            <p class="institution">VinUni-Illinois Smart Health Center, VinUniversity</p>
+                            <p class="details">
+                                Working on Modern Network Architectures and Techniques for Computer Vision.<br>
+                                Advisors: 
+                                Assistant Prof. <a href="https://scholar.google.com/citations?user=s536Zc0AAAAJ" target="_blank">Huynh Thanh Trung</a>,
+                                Assistant Prof. <a href="https://scholar.google.com/citations?user=mXcFcNkAAAAJ" target="_blank">Pham Huy Hieu</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-period">2023 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Undergraduate Researcher</h3>
+                            <p class="institution">Modeling, Simulation and Optimization Laboratory (MSOLab)</p>
+                            <p class="details">
+                                Research on Large Language Models for Combinatorial Optimization.<br>
+                                Supervised by Prof. <a href="#" target="_blank">Huynh Thi Thanh Binh</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards Section -->
+            <section id="awards" class="section">
+                <h2 class="section-title">Awards</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-period">2024</div>
+                        <div class="timeline-content">
+                            <h3>[Your Award Title]</h3>
+                            <p class="institution">[Issuing Organization]</p>
+                            <p class="details">[Optional details about the award]</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visitor Map Section -->
+            <section class="section">
+                <h2 class="section-title">Visitor</h2>
+                <div class="visitor-thanks">
+                    <div class="visitor-thanks-icon">👋</div>
+                    <div class="visitor-thanks-text">
+                        <p>Thank you for visiting my page! It means a lot to me.</p>
+                        <p>I am always happy to connect — whether you have a question, a collaboration idea, or just want to say hi. Feel free to reach out via email or any of the links above. I look forward to hearing from you!</p>
+                    </div>
+                </div>
+                <div class="clustrmap">
+                    <!-- Replace this with your own clustrmap or remove -->
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2026 Bui Khanh Duy. Last updated: March 2026.</p>
+                <p class="footer-note">Template inspired by academic profile designs.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
