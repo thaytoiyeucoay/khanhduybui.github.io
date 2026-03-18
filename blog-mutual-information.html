@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thảo luận về Thông tin tương hỗ (Mutual Information) và ứng dụng trong Computer Vision">
+    <title>Sức mạnh của Thông tin tương hỗ (Mutual Information) trong Computer Vision | Bui Khanh Duy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Config for MathJax to render LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            padding: 0 30px;
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-title {
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .blog-meta {
+            color: var(--accent-cyan);
+            font-family: monospace;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .blog-content {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            color: var(--text-primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text-primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 25px;
+        }
+
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-content li::marker {
+            color: var(--accent-purple);
+        }
+
+        .equation-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        .callout {
+            background: rgba(176, 82, 255, 0.1);
+            border-left: 4px solid var(--accent-purple);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Glow Effects -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">KD.</a>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#blogs" class="nav-link">Blogs</a>
+                <a href="assets/cv.pdf" target="_blank" class="nav-link" style="color: var(--accent-cyan);">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <a href="index.html#blogs" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Portfolio
+        </a>
+
+        <header class="blog-header">
+            <h1 class="blog-title">Từ Lý thuyết của Claude E. Shannon đến Computer Vision: Sức mạnh của Mutual
+                Information (MI)</h1>
+            <div class="blog-meta">
+                <span>March 18, 2026</span>
+                <span>•</span>
+                <span>Bùi Khánh Duy</span>
+                <span>•</span>
+                <span style="color: var(--accent-purple);">#DeepLearning #Mathematics</span>
+            </div>
+        </header>
+
+        <article class="blog-content">
+            <p>
+                Năm 1948, Claude E. Shannon xuất bản bài báo định mệnh <em>"A Mathematical Theory of
+                    Communication"</em>, khai sinh ra ngành Lý thuyết Thông tin (Information Theory). Kỷ nguyên công
+                nghệ số mà chúng ta đang sống được xây dựng trên những nền tảng do ông đặt ra.
+            </p>
+            <p>
+                Trong bài viết hôm nay, mình muốn thảo luận về một trong những viên ngọc quý nhất của lý thuyết này:
+                <strong>Thông tin tương hỗ (Mutual Information - \( MI \))</strong>, và cách một khái niệm toán học
+                thuần túy từ 8 thập kỷ trước đang định hình lại các kiến trúc Deep Learning hiện đại trong lĩnh vực
+                Computer Vision (CV).
+            </p>
+
+            <h2>1. Mutual Information là gì?</h2>
+            <p>
+                Để hiểu \( MI \), ta phải mượn khái niệm <strong>Entropy</strong> \( H(X) \) - đại lượng đo lường sự
+                không chắc chắn (uncertainty) của một biến ngẫu nhiên \( X \).
+            </p>
+            <p>
+                Trong khi Entropy đánh giá sự ngẫu nhiên của một biến, thì <strong>Mutual Information</strong> lại đo
+                lường sự phụ thuộc giữa hai biến ngẫu nhiên \( X \) và \( Y \). Cụ thể, \( MI(X;Y) \) cho chúng ta biết:
+                <em>"Biết thông tin về biến \( Y \) sẽ làm giảm bao nhiêu sự không chắc chắn về biến \( X \)?"</em>
+            </p>
+
+            <div class="equation-box">
+                \[ I(X;Y) = H(X) - H(X|Y) = \sum_{y \in \mathcal{Y}} \sum_{x \in \mathcal{X}} p(x,y)
+                \log\left(\frac{p(x,y)}{p(x)p(y)}\right) \]
+            </div>
+
+            <p>
+                Tính chất thú vị nhất của \( I(X;Y) \) là tính đối xứng: \( I(X;Y) = I(Y;X) \). Hơn nữa, \( I(X;Y) = 0
+                \) khi và chỉ khi hai biến \( X \) và \( Y \) hoàn toàn độc lập. Bạn có thể coi MI như một phiên bản
+                tổng quát hóa phi tuyến tính (non-linear generalization) của hệ số tương quan (correlation coefficient)
+                mà ta hay dùng trong thống kê.
+            </p>
+
+            <h2>2. Ứng dụng của MI trong Computer Vision</h2>
+
+            <p>Trong Computer Vision, chúng ta hiếm khi truyền tải tín hiệu qua cáp quang hay ăng-ten, mà đối tượng của
+                chúng ta là những véc-tơ đặc trưng (feature representations) và phân phối hình ảnh. Khái niệm MI đã được
+                ứng dụng theo những cách vô cùng mạnh mẽ:</p>
+
+            <h3>2.1. Feature Disentanglement (Tách biệt đặc trưng)</h3>
+            <p>
+                Khi huấn luyện các mô hình tạo sinh (Generative Models) như GANs, VAEs hay các mô hình Segmentation phức
+                tạp, một vấn đề lớn là các yếu tố ẩn (latent factors) bị rối (entangled) với nhau. Ví dụ: khi bạn muốn
+                mô hình trích xuất đặc trưng hình dáng (shape) tách biệt hoàn toàn khỏi đặc trưng màu sắc
+                (color/texture).
+            </p>
+            <p>
+                Tại đây, người ta sử dụng <strong>Mutual Information Minimization (MIM)</strong>. Bằng cách thiết kế một
+                hàm loss phạt mạnh vào MI giữa hai nhánh đặc trưng, mô hình bị ép buộc phải học các representation hoàn
+                toàn độc lập với nhau.
+            </p>
+            <div class="callout">
+                💡 Trong dự án <strong>AGW-SSDN</strong> nghiên cứu về Semantic Segmentation nông nghiệp của mình, mình
+                đã áp dụng Mutual Information Minimization (MIM) vào Multi-Objective Loss. Việc giám thiểu \( MI \) giúp
+                mạng nơ-ron tách biệt rõ ràng các đặc trưng của "cỏ dại" và "cây trồng" (đặc biệt khi chúng cực kỳ giống
+                nhau về màu sắc và kết cấu lá). Sự tách biệt này đặc biệt thiết yếu trên các bộ dữ liệu mất cân bằng
+                (imbalanced datasets).
+            </div>
+
+            <h3>2.2. Contrastive Learning (Học đối chiếu) & InfoNCE</h3>
+            <p>
+                Bạn đã từng nghe về <strong>Self-Supervised Learning (SimCLR, MoCo)</strong> làm mưa làm gió trong vài
+                năm gần đây? Trái tim toán học của chúng chính là hàm <strong>InfoNCE Loss</strong>.
+            </p>
+            <p>
+                Được chứng minh bởi Oord et al. (2018) trong bài báo CPC (Contrastive Predictive Coding), InfoNCE loss
+                thực chất là cực đại hóa cận dưới (lower bound) của Mutual Information (gọi là InfoMax). Cụ thể, khi đào
+                tạo mô hình Contrastive, chúng ta cố gắng **Tối đa hóa Mutual Information** (MI Maximization) giữa 2 góc
+                nhìn (views) bị augment của cùng một hình ảnh, đồng thời giảm thiểu lượng thông tin chung với các hình
+                ảnh khác. Nhờ đó, mô hình tự học lấy bản chất thông tin mà không cần bất kỳ nhãn thủ công nào!
+            </p>
+
+            <h3>2.3. Multi-modal Image Registration (Đăng ký hình ảnh đa phương thức)</h3>
+            <p>
+                Ra đời sớm hơn hẳn deep learning, vào những năm 1990, Viola & Wells đã đề xuất sử dụng MI để gióng hàng
+                (register) ảnh y tế chụp từ các phương thức khác nhau (ví dụ: ảnh MRI và ảnh CT của cùng một bệnh nhân).
+                Vì mức độ xám (intensity) của ảnh MRI không tuyến tính so với ảnh CT, các phương pháp correlation cũ đều
+                thất bại thảm hại.
+            </p>
+            <p>
+                Tuy nhiên, MI quan tâm đến sự phân phối xác suất chung (joint entropy). Khi hai cấu trúc giải phẫu chồng
+                khít lên nhau, lượng thông tin chia sẻ giữa hai bức ảnh đạt cực đại, tức là $MI$ cực đại. Ý tưởng kinh
+                điển này hiện nay vẫn là State-of-the-Art base cho các mạng CNN thực hiện Medical Image Registration!
+            </p>
+
+            <h2>3. Lời kết</h2>
+            <p>
+                Kế thừa tầm nhìn của Claude E. Shannon, Mutual Information không chỉ giới hạn gò bó trong công nghệ viễn
+                thông mà còn là một công cụ phân tích cực kỳ sắc bén trong AI/Computer Vision hiện tại. Từ việc cực tiểu
+                hóa MI (để tách biệt thông tin - Disentanglement) đến cực đại hóa MI (để trích rút các pattern chung -
+                Contrastive Learning/Registration), mọi thứ đều chứng minh rằng: <strong>Một khi bạn nắm vững nền tảng
+                    Toán học, giới hạn ứng dụng của nó chỉ nằm ở trí tưởng tượng của bạn.</strong>
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Built by <strong>Bui Khanh Duy</strong></p>
+        <p class="footer-note">&copy; 2026. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

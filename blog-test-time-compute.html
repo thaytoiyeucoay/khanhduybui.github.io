@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khám phá Test-Time Compute Scaling và cách AI vươn tới giới hạn suy luận thế hệ mới.">
+    <title>Test-Time Compute Scaling | Bui Khanh Duy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            padding: 0 30px;
+        }
+        .blog-header {
+            margin-bottom: 40px;
+        }
+        .blog-title {
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .blog-meta {
+            color: var(--accent-cyan);
+            font-family: monospace;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .blog-content {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .blog-content h2 {
+            color: var(--text-primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .blog-content h3 {
+            color: var(--text-primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .blog-content p {
+            margin-bottom: 25px;
+        }
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+        .blog-content li::marker {
+            color: var(--accent-purple);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--accent-cyan);
+        }
+        .callout {
+            background: rgba(0, 229, 255, 0.1);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Glow Effects -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">KD.</a>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#blogs" class="nav-link">Blogs</a>
+                <a href="assets/cv.pdf" target="_blank" class="nav-link" style="color: var(--accent-cyan);">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <a href="index.html#blogs" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Portfolio
+        </a>
+
+        <header class="blog-header">
+            <h1 class="blog-title">Test-Time Compute Scaling: Chìa Khóa Đằng Sau Chuỗi Mẫu "o1" của OpenAI</h1>
+            <div class="blog-meta">
+                <span>March 18, 2026</span>
+                <span>•</span>
+                <span>Bùi Khánh Duy</span>
+                <span>•</span>
+                <span style="color: var(--accent-purple);">#LLM #Optimization #RL</span>
+            </div>
+        </header>
+
+        <article class="blog-content">
+            <p>
+                Kể từ khi "Scaling Law" (Định luật mở rộng mô hình) ra đời, các công ty AI đã chạy đua vũ trang hòng bơm thật nhiều tài nguyên TPU/GPU vào quá trình Pre-training (Huấn luyện trước). Luật chơi hồi đó rất đơn giản: <strong>Nhiều dữ liệu hơn + Mô hình lớn hơn + Tốn nhiều Compute vào việc Training hơn = Mô hình thông minh hơn</strong>. 
+            </p>
+            <p>
+                Thế nhưng, tường rào cho phương pháp này đang ngày càng hiện rõ: dữ liệu sạch trên mạng đang dần cạn kiệt (Data Wall), chi phí và thời gian huấn luyện vươn tới mức kinh ngạc. 
+            </p>
+            <p>
+                Đây là lúc <strong>Test-Time Compute Scaling (hay Inference-Time Compute Scaling)</strong> ra đời, được đánh dấu mốc bởi sự xuất hiện của dòng mô hình <span style="color: var(--accent-cyan); font-weight: 500;">OpenAI o1</span> cuối năm 2024.
+            </p>
+
+            <h2>1. Test-Time Compute Scaling Là Gì?</h2>
+            <p>
+                Từ trước đến nay, trong giai đoạn **Test-Time** (Lúc chúng ta gõ prompt và bắt model sinh câu trả lời - inference), tài nguyên tính toán gần như cố định cho mọi token theo phương pháp sinh tuần tự (Autoregressive decoding). Cho dù bạn hỏi "1 + 1 bằng mấy?" hay yêu cầu "Giải phương trình Navier-Stokes 3 chiều", một mạng Transformer chuẩn vẫn sẽ suy luận với lượng tiêu hao flops/token tuyến tính giống hệt nhau.
+            </p>
+            <p>
+                <strong>Test-Time Compute Scaling</strong> thực hiện một cuộc cách mạng: Cho phép mô hình <em>suy nghĩ (think)</em>, dành nhiều chu kỳ vi xử lý (compute) hơn và sinh ra một chuỗi các nỗ lực ẩn giấu tự chỉnh sửa (hidden Chain-of-Thought) <strong>trước khi</strong> thực sự chốt đáp án cuối cùng. Nói cách khác, AI được quyền tốn gấp 10, gấp 100 lần Compute ở giai đoạn suy luận để đổi lấy một câu trả lời chính xác vượt bậc trong bộ môn Toán hoặc Coding.
+            </p>
+
+            <h2>2. Kỹ Thuật Nền Tảng (Core Mechanics)</h2>
+            <p>
+                Làm sao để một mô hình biết cách "nghĩ lâu hơn"? Việc này không đơn giản là Prompt Engineering, mà đòi hỏi sự kết hợp phức tạp bên dưới:
+            </p>
+
+            <h3>2.1. Reinforcement Learning (Học tăng cường) ở giai đoạn Inference</h3>
+            <p>
+                Quá trình suy luận giờ đây được tiếp cận như một quá trình tìm kiếm (Search). Khi đó, các thuật toán như <strong>Monte Carlo Tree Search (MCTS)</strong> hoặc Process Reward Models (PRMs) sẽ liên tục đánh giá từng bước giải toán do LLM tự sinh ra. Nếu LLM đi vào ngõ cụt, quá trình Search sẽ ra lệnh: "Lùi lại, sai rồi, đi qua hướng giải khác". Thuật toán càng chạy lâu (Test-Time Compute càng lớn) $\rightarrow$ tỷ lệ rẽ đúng nhánh đáp án đúng càng cao.
+            </p>
+
+            <h3>2.2. Huấn luyện để "Suy nghĩ"</h3>
+            <p>
+                Bằng cách dùng RL (như PPO) cho hàng chục triệu bài Toán/Code khó vỡi phần thưởng (Reward) là tính đúng đắn, mô hình tự hình thành khả năng <strong>tự sửa lỗi (self-correction)</strong>, phản tư và chia nhỏ bài toán (deconstruct the problem).
+            </p>
+
+            <div class="callout">
+                💡 Liên hệ xa hơn vào <strong>Computer Vision và Optimization</strong> (Sở thích nghiên cứu của mình): Tư duy cấp phát tài nguyên tính toán chủ động tại Test-time cũng có thể áp dụng cho các mạng sinh ảnh (Diffusion Models). Thay vì sinh ảnh với 50 steps cho mọi trường hợp, nếu ta tối ưu hóa quỹ đạo sinh tủy theo sự phức tạp của vật thể, ta hoàn toàn có thể cân bằng được giữa độ trung thực (FID) và chi phí inference.
+            </div>
+
+            <h2>3. Tương Lai Nào Cho AI Research?</h2>
+            <p>
+                Sự ra đời của mô hình Test-Time Scaling cho chúng ta 2 góc nhìn tích cực. Thứ nhất, nó báo hiệu chặng đường phát triển AI vẫn chưa bão hòa; chúng ta có quỹ đạo tăng trưởng thứ 2 với Inference Compute. Thứ hai, các nhóm nghiên cứu và startup nhỏ <strong>hoàn toàn có cơ hội nhảy vào</strong>. Vỡi việc giai đoạn Inference đóng vai trò cao, người ta không cần phòng máy trạm tỷ đô để Pre-train mô hình 2 ngàn tỷ tham số nữa, mà chỉ cần dùng các Model Mở kích thước nhỏ (Llama 3 8B, Qwen) rồi nhúng thuật toán Search/RL tinh xảo vào để đánh bại các con khổng lồ trong các kỳ thi cụ thể.
+            </p>
+            <p>
+                Điều này đồng thời thúc đẩy nhu cầu tìm kiếm và tối ưu hóa các phần cứng chuyên biệt cho Inference tốc độ cao - một mảnh đất vàng cho các nhóm tối ưu hóa hệ thống.
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Built by <strong>Bui Khanh Duy</strong></p>
+        <p class="footer-note">&copy; 2026. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

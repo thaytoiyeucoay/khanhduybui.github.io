@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thảo luận về sự giao thoa mạnh mẽ giữa Computer Vision (CV) và Reinforcement Learning (RL) trong việc xây dựng Autonomous Agents.">
+    <title>Sự Giao Thoa Của CV Và RL | Bui Khanh Duy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 120px auto 50px;
+            padding: 0 30px;
+        }
+        .blog-header {
+            margin-bottom: 40px;
+        }
+        .blog-title {
+            font-size: 2.8rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .blog-meta {
+            color: var(--accent-cyan);
+            font-family: monospace;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .blog-content {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .blog-content h2 {
+            color: var(--text-primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .blog-content h3 {
+            color: var(--text-primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .blog-content p {
+            margin-bottom: 25px;
+        }
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        .blog-content li {
+            margin-bottom: 10px;
+        }
+        .blog-content li::marker {
+            color: var(--accent-purple);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--accent-cyan);
+        }
+        .callout {
+            background: rgba(176, 82, 255, 0.1);
+            border-left: 4px solid var(--accent-purple);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Glow Effects -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">KD.</a>
+            <div class="nav-links">
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#blogs" class="nav-link">Blogs</a>
+                <a href="assets/cv.pdf" target="_blank" class="nav-link" style="color: var(--accent-cyan);">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <a href="index.html#blogs" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Portfolio
+        </a>
+
+        <header class="blog-header">
+            <h1 class="blog-title">Sự Giao Thoa Của CV Và RL: Khi "Đôi Mắt" Được Chỉ Đạo Bởi "Bộ Não" Của AI</h1>
+            <div class="blog-meta">
+                <span>March 18, 2026</span>
+                <span>•</span>
+                <span>Bùi Khánh Duy</span>
+                <span>•</span>
+                <span style="color: var(--accent-purple);">#ComputerVision #ReinforcementLearning</span>
+            </div>
+        </header>
+
+        <article class="blog-content">
+            <p>
+                Computer Vision (CV) - Thị giác máy tính - vốn dĩ vô cùng xuất sắc trong việc trả lời câu hỏi <em>"Tôi đang nhìn thấy cái gì?"</em>. Nhưng nếu chỉ phân biệt "con mèo" và "con chó", AI mới chỉ là một cỗ máy phân loại ngây ngô thụ động. 
+            </p>
+            <p>
+                Để hiện thực hóa ước mơ về AGI hay các Embodied Agents (Robot tự hành trong thế giới thực), AI cần phải biết trả lời câu hỏi thứ hai: <strong>"Dựa trên những gì tôi thấy, tôi nên làm gì tiếp theo?"</strong>. Đó là lúc Reinforcement Learning (RL) - Học tăng cường - bước vào và bắt tay với CV.
+            </p>
+
+            <h2>1. Vai Trò Tương Hỗ: Observation State & Action Space</h2>
+            <p>
+                Trong thế giới của Reinforcement Learning truyền thống (ví dụ: cờ vua, cờ vây), State (Trạng thái) được định nghĩa rất hoàn hảo và đầy đủ bằng các ma trận rời rạc. Tuy nhiên, trong môi trường thực tế (Robotic Grasping, Autonomous Driving), Trạng thái không thể được biểu diễn dễ dàng như vậy. Môi trường thực tế là một luồng video liên tục, nhiễu loạn và không thể đoán trước.
+            </p>
+            <p>
+                Ở đây, <strong>Computer Vision đóng vai trò như một bộ mã hóa (State Encoder) đỉnh cao</strong>. Mạng CNN hoặc Vision Transformer (ViT) sẽ "nuốt" hình ảnh thô từ camera, làm mịn noise, và trích xuất ra một vector đặc trưng kích thước nhỏ (Latent Representation). Vector này chính là <code>State (S)</code>, được đưa vào lõi của mô hình RL tiếp nhận để tính toán <code>Policy (\( \pi \))</code> đưa ra <code>Action (A)</code>.
+            </p>
+
+            <h2>2. Những Kì Tích Nhờ Sự Giao Thoa Này</h2>
+            
+            <h3>2.1. Active Vision (Thị Giác Chủ Động)</h3>
+            <p>
+                Khác với các hệ thống CV thông thường chụp nguyên 1 bức ảnh to và xử lý tất cả pixel, con người chỉ đảo mắt (saccades) đến các vùng quan trọng. RL giúp mô hình CV học được cách <strong>"quan sát ở đâu" (Where to look)</strong>. Bằng cơ chế chú ý liên kết với phần thưởng (attention with reward), camera sẽ di chuyển (pan, tilt) để tìm kiếm object bị che khuất mà không cần xử lý các vùng background lãng phí.
+            </p>
+
+            <h3>2.2. Autonomous Driving (Xe Tự Lái)</h3>
+            <p>
+                Hệ thống xe Tesla FSD hay Waymo là những minh chứng điển hình nhất. Camera 360 độ và LiDAR dựng lại bản đồ BEV (Bird's Eye View) và 3D segmentation của vạn vật trên đường (Đóng góp của CV). Dựa trên bản đồ đó, thuật toán RL/Planning sẽ dự đoán quỹ đạo các ô tô khác, từ đó học cách nhấn ga, phanh, và bẻ lái sao cho tối đa hóa "tiến độ đến đích" và tối thiểu hóa "khả năng va chạm" (Đóng góp của RL).
+            </p>
+
+            <h3>2.3. Sim-to-Real Transfer (Từ Mô phỏng Ra Thực tế)</h3>
+            <div class="callout">
+                💡 Vì thuật toán RL cần đào tạo qua hàng triệu lượt thử/sai (Trial & Error), ta không thể cho Robot ngoài đời thực đi húc vào tường hàng triệu lần được. Các kĩ sư phải huấn luyện RL trong không gian mô phỏng 3D (như Isaac Sim hoặc MuJoCo). 
+                Tại đây, khó khăn lớn nhất là "Domain Gap" – ảnh render trong 3D trông giả hơn ngoài đời. Các kĩ sư Computer Vision phải sử dụng <em>Domain Randomization</em> và <em>CycleGAN</em> để thay đổi màu sắc, mô phỏng ánh sáng hắt vào camera, giúp bộ não RL "tưởng" như nó đang ở môi trường thật, từ đó Zero-shot transfer thành công thẳng ra con Robot vật lý ngoài Trái Đất!
+            </div>
+
+            <h2>3. Định Hướng Và Niềm Đam Mê</h2>
+            <p>
+                Với background dày dặn về Computer Vision (đã tự thiết kế các backbone như AGW-SSDN) kết hợp với nền tảng Toán Ưu hóa (Optimization), mình nhận thấy sự giao thoa này chính là điểm nóng tiềm năng tiếp theo. Tối ưu hóa hàm Reward trong RL thực chất là những bài toán Gradient Descent khổng lồ, và việc giảm thiểu nhiễu (variance) khi truyền gradient từ module RL ngược về module CV đang là một trong những thử thách cực kỳ hấp dẫn của giới học thuật.
+            </p>
+            <p>
+                Hi vọng trong thời gian tới, mình sẽ có cơ hội được đặt tay đào sâu nghiên cứu việc tích hợp trực tiếp khả năng Decision-Making của RL vào sâu trong kiến trúc trích xuất đặc trưng của mạng Deep Vision.
+            </p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Built by <strong>Bui Khanh Duy</strong></p>
+        <p class="footer-note">&copy; 2026. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
